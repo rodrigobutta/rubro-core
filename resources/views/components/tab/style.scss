@@ -1,0 +1,64 @@
+@import "./resources/assets/sass/component";
+
+.component-tab{
+    @at-root #{&}__wrap {
+        width: 100%;
+        overflow: hidden;
+    }
+    @at-root #{&}__container {
+        padding-top: 1rem;
+        width: 100%;
+        display: flex;
+        min-width: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-left: .3em;
+        padding-right: .3em;
+        margin-bottom: -20px;
+    }
+
+    @at-root #{&}__link {
+        flex-grow: 1;
+        border: none;
+        color: $navy;
+        cursor: pointer;
+        padding: 1em;
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        background: transparent;
+        justify-content: center;
+        border-bottom: 1px solid #c1c7cd;
+        font: $font-regular rem(16) $primary-font-family;
+        @include transition(all .2s ease-in-out);
+        &::after {
+            display: block;
+            content: attr(title);
+            font-weight: bold;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        &:hover {
+            color: $cerulean;
+        }
+        &:focus, &:active {
+            outline: 0;
+        }
+        &.active {
+            border-color: white;
+            box-shadow: 0px -6px 10px 0 rgba(160, 160, 160, 0.19);
+            color: $cerulean;
+            font-weight: $font-medium;
+        }
+        @include media-breakpoint-down(sm) {
+            min-width: 140px;
+        }
+    }
+
+    .tabcontent {
+        display: none;
+        padding-top: 40px;
+    }
+
+}

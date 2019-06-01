@@ -1,0 +1,125 @@
+.btn {
+    display: block;
+    &:focus, &:active {
+        outline: 0;
+    }
+    @at-root #{&}-ti {
+        .btn {
+            height: 4em;
+            display: flex;
+            margin-top: 0;
+            padding: 0 2.5em;
+            border-radius: 5px;
+            border: $border-item;
+            color: $greyish-brown;
+            align-items: center;
+            justify-content: center;
+            font: $font-medium rem(16) $primary-font-family;
+            &:hover {
+                color: $white;
+                background: $cerulean;
+            }
+            svg {
+                height: 1em;
+                display: block;
+                margin-left: 1em;
+                fill: $greyish-brown;
+            }
+            &:hover svg {
+                fill: $white;
+            }
+        }
+        @at-root #{&}-portrait {
+            width: 100%;
+            .btn {
+                height: 4.5em;
+                &:hover {
+                    box-shadow: $btn-box-shadow;
+                }
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+
+    @at-root #{&}-t {
+        .btn {
+            height: 4em;
+            display: flex;
+            margin-top: 0;
+            padding: 0 2.5em;
+            border-radius: 5px;
+            border: $border-item;
+            color: $greyish-brown;
+            align-items: center;
+            justify-content: center;
+            font: $font-medium rem(16) $primary-font-family;
+            &:hover {
+                color: $white;
+                background: $cerulean;
+                box-shadow: $btn-box-shadow;
+            }
+        }
+        @at-root #{&}-portrait {
+            width: 100%;
+            .btn {
+                height: 4.5em;
+                &:hover {
+                    box-shadow: $btn-box-shadow;
+                }
+            }
+        }
+        @at-root #{&}-landscape {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 4em;
+            padding-bottom: 4em;
+            justify-content: space-between;
+            .btn {
+                width: 24%;
+                height: 4.5em;
+                flex-wrap: wrap;
+                &:hover {
+                    box-shadow: $btn-box-shadow;
+                }
+                @include media-breakpoint-down(md) {
+                    width: 49%;
+                    margin: 1% 0;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    margin: 2% 0;
+                }
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+
+    @at-root #{&}--arrow-right {
+        display: flex;
+        align-items: center;
+        color: $greyish-brown;
+        font: $font-bold rem(16) $primary-font-family;
+        svg {
+            fill: $navy;
+            height: 2em;
+            margin-left: 1em;
+            border-radius: (50%);
+        }
+        &:hover {
+            color: $navy;
+            svg {
+                fill: $cerulean;
+                background: $cerulean;
+                .path-arrow {
+                    fill: white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import "./resources/assets/sass/component";
+
+.component-text-h-box {
+    padding-bottom: 0 !important;
+
+    & + &,
+    & + .component-text-tid-box,
+    & + .component-text-da-box,
+    & + .component-text-tdp-box {
+        padding-top: 1rem;
+    }
+
+    @at-root #{&}__container {
+        padding: 1em 1.4em;
+        border-radius: 5px;
+        border: $border-item;
+    }
+    @at-root #{&}__text p {
+        margin: 0;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-bold rem(16) $primary-font-family;
+        line-height: 1.4;
+    }
+    a, a:hover {
+        color: $cerulean;
+    }
+}

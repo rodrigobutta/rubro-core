@@ -1,0 +1,33 @@
+.action-button{
+
+    &[on="rest"]{
+
+
+        .on-working{
+            display: none;
+        }
+
+        .on-rest{
+            display: block;
+        }
+
+    }
+
+    &[on="working"]{
+        opacity: 0.5;
+        cursor: default !important;
+        pointer-events: none;
+
+
+        .on-working{
+            display: block;
+        }
+
+        .on-rest{
+            display: none;
+        }
+
+    }
+
+
+}

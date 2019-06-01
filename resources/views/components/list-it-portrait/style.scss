@@ -1,0 +1,49 @@
+@import "./resources/assets/sass/component";
+
+.component-list-it-portrait {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        display: block;
+        border-bottom: 1px solid $border-color;
+    }
+    @at-root #{&}__link {
+        min-height: 7em;
+        padding: 1em 0;
+        display: flex;
+        align-items: center;
+        &:hover .component-list-it-portrait__text {
+            color: $cerulean;
+        }
+    }
+    @at-root #{&}__icon {
+        width: 5em;
+        height: 5em;
+        display: block;
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        width: 100%;
+        padding: 0 5%;
+        line-height: 1.4;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        @include transition(all .2s ease-in-out);
+        font: $font-medium rem(25) $primary-font-family;
+        @include media-breakpoint-down(xs) {
+            font-size: rem(20);
+        }
+    }
+}

@@ -1,0 +1,116 @@
+@import "./resources/assets/sass/component";
+
+.component-card-1ptd-4ptd-vertical {
+    @at-root #{&}__container {
+        display: flex;
+        flex-direction: column;
+    }
+    @at-root #{&}__wrapper {
+        width: 100%;
+        flex: 0 0 49%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(md) {
+            flex: 0 0 100%;
+        }
+    }
+    @at-root #{&}__card {
+        border: 0;
+        padding: 0;
+        display: flex;
+        border-radius: 0;
+        justify-content: flex-end;
+        background-color: $grey;
+        box-shadow: 0px 45px 45px -20px rgba($black, 0.1);
+        background-position: center;
+
+        height: calc(30rem / 2 - 1.25rem);
+        width: calc(50% - .5rem);
+        margin-bottom: 2.5rem;
+        @include transition(all .2s ease-in-out);
+
+
+        @include media-breakpoint-down(xs) {
+            height: 10rem;
+        }
+
+        &:hover {
+            color: inherit;
+            box-shadow: 0px 50px 45px -20px rgba($black, 0.2);
+
+            .component-card-1ptd-4ptd-vertical__card-title {
+                color: $cerulean;
+            }
+        }
+
+        @at-root #{&}__bottom {
+            align-self: flex-end;
+            width: calc(100% - 2rem);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: -1rem;
+            padding: 1rem;
+            padding-bottom: 2rem;
+            background-color: white;
+
+            @include media-breakpoint-down(md) {
+                padding-bottom: 1rem;
+            }
+            @include media-breakpoint-down(sm) {
+                min-height: 6em;
+                padding: 1rem;
+            }
+        }
+
+        @at-root #{&}--highlighted {
+            width: 100%;
+            height: 30rem;
+            margin-bottom: 3rem;
+            color: $greyish-brown;
+
+            .component-card-1ptd-4ptd-vertical__card__bottom {
+                width: calc(100% - 4rem);
+                padding: 2rem;
+                padding-top: 1.5rem;
+                @include media-breakpoint-down(sm) {
+                    width: calc(100% - 2rem);
+                }
+            }
+            .component-card-1ptd-4ptd-vertical__card-title {
+                font-size: rem(38);
+                font-weight: $font-regular;
+                @include media-breakpoint-down(md) {
+                    font-size: rem(28);
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: rem(26);
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: rem(20);
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 25rem;
+            }
+            @include media-breakpoint-down(xs) {
+                height: 20rem;
+            }
+        }
+    }
+
+    @at-root #{&}__card-title {
+        margin-bottom: 0;
+        color: $greyish-brown;
+        @include transition(color .2s ease-in-out);
+        font: $font-regular rem(21) $primary-font-family;
+        @include media-breakpoint-down(sm) {
+            font-size: rem(18);
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: rem(13);
+        }
+    }
+}

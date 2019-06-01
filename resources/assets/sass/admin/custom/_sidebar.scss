@@ -1,0 +1,18 @@
+#sidebar {
+    #main-logo {
+        background-image: url(../../img/admin/logo.svg);
+        width: 135px;
+        height: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 3px;
+    }
+    .logo {
+        width: 90%;
+        margin-bottom: 5px;
+        opacity: 0.9;
+    }
+    .content-side-user {
+        height: 96px !important;
+    }
+}

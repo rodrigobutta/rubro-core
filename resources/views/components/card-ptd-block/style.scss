@@ -1,0 +1,87 @@
+@import "./resources/assets/sass/component";
+
+.component-card-ptd-block {
+    display: flex;
+    justify-content: space;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+    width: auto !important;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @at-root #{&}__card {
+        flex: 0 0 calc((1/3 * 100%) - 1rem);
+        margin-right: .5rem;
+        margin-left: .5rem;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        flex-direction: column;
+        color: $greyish-brown;
+        background-color: $grey;
+        transition: all .3s ease;
+
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+            box-shadow: 0px 20px 30px 0 rgba($black, 0.2);
+        }
+
+        @include media-breakpoint-down(sm) {
+            flex: 1 1 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        @at-root #{&}__img {
+            width: 100%;
+            height: 0;
+            max-width: 100%;
+            padding-top: 90%;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @at-root #{&}__description {
+            margin-top: auto;
+            border: 1px solid $grey;
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background-color: $white;
+            padding: 1.25rem;
+        }
+
+        @at-root #{&}__title {
+            font-size: 1.375rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            & + .component-card-ptd-block__card__text {
+                margin-top: .75rem;
+            }
+        }
+
+        @at-root #{&}__text {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.3125rem;
+            letter-spacing: -0.25px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}

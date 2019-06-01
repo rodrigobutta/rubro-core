@@ -1,0 +1,75 @@
+@import "./resources/assets/sass/component";
+
+.component-list-da {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        padding: 2em 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: $border-item;
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        margin-right: auto;
+        line-height: 1.4;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        @include media-breakpoint-down(xs) {
+            font-size: rem(16) !important;
+        }
+    }
+
+    .btn {
+        @at-root #{&}--arrow-right {
+            display: flex;
+            align-items: center;
+            color: $greyish-brown;
+            padding-right: 0;
+            font: $font-bold rem(16) $primary-font-family;
+            svg {
+                fill: $navy;
+                height: 2em;
+                margin-left: 1em;
+                border-radius: (50%);
+            }
+            &:hover {
+                color: $navy;
+                svg {
+                    fill: $cerulean;
+                    background: $cerulean;
+                    .path-arrow {
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        @at-root #{&}__item {
+            flex-direction: column;
+        }
+        @at-root #{&}__text {
+            font-size: rem(18);
+        }
+        .btn {
+            margin-top: 1em;
+            margin-left: auto;
+            @at-root #{&}--arrow-right {
+                font-size: rem(17);
+            }
+        }
+    }
+}

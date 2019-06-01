@@ -1,0 +1,44 @@
+@import "./resources/assets/sass/component";
+
+.component-alert {
+
+    @at-root #{&}__wrapper {
+        display: flex;
+        align-items: center;
+        //margin-top: 1rem;
+        border-radius: 5px;
+        background-color: $sunflower-yellow;
+        padding: 1.25rem;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: middle;
+            margin-right: 1rem;
+            background: url('images/alert.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+    @at-root #{&}__content {
+        display: flex;
+        align-items: center;
+        p {
+            line-height: 1;
+            margin-bottom: 0;
+        }
+    }
+    @at-root #{&}__text {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+        font-size: 1rem;
+        line-height: 1;
+        color: $navy;
+        @at-root #{&}__highlighted {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+}

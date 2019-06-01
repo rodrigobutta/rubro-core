@@ -1,0 +1,41 @@
+@import "./resources/assets/sass/component";
+
+.component-text-th-1c-bold {
+    @at-root #{&}__container {
+        width: 100%;
+    }
+    @at-root #{&}__title {
+        color: $navy;
+        margin-bottom: .8em;
+        letter-spacing: -0.6px;
+        font: $font-bold rem(25) $primary-font-family;
+    }
+    @at-root #{&}__text {
+            margin: 0;
+            margin-bottom: 1em;
+            color: $greyish-brown;
+            letter-spacing: -0.4px;
+            font: $font-regular rem(16) $primary-font-family;
+            line-height: 1.4;
+
+        & :last-child {
+            margin-bottom: 0;
+        }
+
+        blockquote {
+            color: $navy;
+            font-weight: 300;
+            font-size: rem(25);
+            &:before {
+                content: "\201C";
+            }
+            &:after {
+                content: "\201D";
+            }
+        }
+
+        a, a:hover {
+            color: $cerulean;
+        }
+    }
+}

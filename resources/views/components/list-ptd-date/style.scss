@@ -1,0 +1,119 @@
+@import "./resources/assets/sass/component";
+
+.component-list-ptd-date {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        margin-bottom: 2em;
+        @include media-breakpoint-down(xs) {
+            margin-bottom: 3em;
+        }
+    }
+    @at-root #{&}__link {
+        display: flex;
+        @include transition(all .2s ease-in-out);
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+        }
+        &:hover {
+            .component-list-ptd-date__img {
+                box-shadow: 10.1px 8.2px 21px 0 rgba(0, 0, 0, 0.17);
+            }
+            .component-list-ptd-date__title {
+                color: $cerulean;
+            }
+        }
+    }
+    @at-root #{&}__col {
+        position: relative;
+        &.left {
+            width: 28%;
+        }
+        &.right {
+            width: 72%;
+            padding: 0 6%;
+        }
+        @include media-breakpoint-down(xs) {
+            &.left, &.right {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    }
+    @at-root #{&}__date {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 4em;
+        display: block;
+        color: white;
+        padding: .9em 0;
+        position: absolute;
+        text-align: center;
+        border-radius: 5px;
+        background: $cerulean;
+        box-shadow: $box-shadow;
+        font: $font-bold rem(21) $primary-font-family;
+        @include media-breakpoint-down(sm) {
+            top: calc(-75px /2 + 1em /2);
+            padding: 0;
+            width: rem(85);
+            height: rem(75);
+            font-size: rem(25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @include media-breakpoint-down(xs) {
+            top: calc(-60px /2 + 1em /2);
+            width: rem(70);
+            height: rem(60);
+            font-size: rem(20);
+        }
+    }
+    @at-root #{&}__img {
+        width: 100%;
+        height: 15em;
+        margin-top: 1em;
+        overflow: hidden;
+        border-radius: 5px;
+        @include transition(all .2s ease-in-out);
+        @include media-breakpoint-down(xs) {
+            height: 8rem;
+        }
+    }
+    @at-root #{&}__title {
+        margin: 1em 0 .6em;
+        color: $greyish-brown;
+        @include transition(all .2s ease-in-out);
+        font: $font-bold rem(22) $primary-font-family;
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        line-height: 1.4;
+        margin-bottom: .8em;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        strong {
+            font-weight: $font-medium;
+        }
+        @include media-breakpoint-down(xs) {
+            &:first-of-type {
+                display: none;
+            }
+        }
+    }
+}

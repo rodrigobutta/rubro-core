@@ -1,0 +1,123 @@
+@import "./resources/assets/sass/component";
+
+.component-card-ptda-video {
+    // max-width: 350px;
+    &__wrapper {
+        background-color: $greyish-brown;
+        border-radius: 5px;
+        overflow: hidden;
+        color: $white;
+        box-shadow: 0px 20px 30px 0 rgba($black, 0.2);
+    }
+
+
+    @at-root #{&}__img-wrapper {
+        position: relative;
+        height: calc(315px / 2);
+        overflow: hidden;
+    }
+
+    @at-root #{&}__img {
+        position: absolute;
+        max-width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @at-root #{&}__live {
+        top: 2rem;
+        left: 2rem;
+        margin: 0;
+        padding: .7rem;
+        border-radius: 10px;
+        background-color: $sunflower-yellow;
+        color: $greyish-brown;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1;
+        position: absolute !important;
+        @include media-breakpoint-down(xs) {
+            top: 1.5rem;
+            left: 1.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    @at-root #{&}__description {
+        padding: 2rem;
+        padding-top: 1.1rem;
+        @include media-breakpoint-down(xs) {
+            padding: 1.5rem;
+            padding-top: 1.1rem;
+        }
+    }
+
+    @at-root #{&}__title {
+        color: inherit;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        & + .component-card-ptda-video__text {
+            margin-top: 1.25rem;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 1.25rem;
+        }
+    }
+
+    @at-root #{&}__text {
+        color: inherit;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        & + .component-card-ptda-video__link {
+            margin-top: 1.25rem;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: .85rem;
+        }
+    }
+
+    @at-root #{&}__link {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        font-weight: 700;
+        font-size: .9rem;
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        @at-root #{&}__arrow {
+            display: inline-block;
+            vertical-align: middle;
+            vertical-align: text-bottom;
+            border-radius: 100px;
+            border: 1px solid $white;
+            z-index: 1;
+            font-size: 0;
+            color: transparent;
+            margin-left: .5rem;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                background-color: $white;
+                mask-image: url('/images/arrow.svg');
+                background-repeat: no-repeat;
+                padding: .6rem;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: .7rem;
+        }
+    }
+}

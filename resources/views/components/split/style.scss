@@ -1,0 +1,13 @@
+@import "./resources/assets/sass/component";
+
+.component-split {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    .split {
+        height: 40px;
+        background: transparent;
+        &.bigger {
+            height: 80px;
+        }
+    }
+}

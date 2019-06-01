@@ -1,0 +1,42 @@
+@import "./resources/assets/sass/component";
+
+.component-btn {
+    display: block;
+    text-align: center;
+
+    & + & {
+        padding-top: 0;
+        margin-top: -2rem;
+    }
+
+    .btn {
+        min-height: 4.5em !important;
+        margin: auto;
+        display: inline-block !important;
+        background-color: $white;
+
+        span {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &::after {
+            display: none !important;
+        }
+
+        &:hover {
+            box-shadow: $btn-box-shadow;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        margin-top: 1em;
+        flex-direction: column;
+        .btn {
+            min-height: 4.25rem !important;
+        }
+    }
+}

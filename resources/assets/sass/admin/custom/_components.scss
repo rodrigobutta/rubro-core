@@ -1,0 +1,305 @@
+
+/* COMPONENTE IMAGES*/
+
+    .form-input-image{
+        width: 300px;
+    }
+
+    .form-input-image-wrapper{
+        width: 100%;
+        position: relative;
+        min-height: 50px;
+        background-color: #fff;
+        border-bottom: 1px solid #d2d2d2;
+        padding: 10px 0px;
+    }
+    .form-input-image-wrapper.png {
+        background-color: #fff;
+        background-image: -webkit-linear-gradient(bottom left, #cbcbcb 25%, transparent 25%, transparent 75%, #cbcbcb 75%, #cbcbcb),
+        -webkit-linear-gradient(bottom left, #cbcbcb 25%, transparent 25%, transparent 75%, #cbcbcb 75%, #cbcbcb);
+        background-image: -o-linear-gradient(bottom left, #cbcbcb 25%, transparent 25%, transparent 75%, #cbcbcb 75%, #cbcbcb),
+        -o-linear-gradient(bottom left, #cbcbcb 25%, transparent 25%, transparent 75%, #cbcbcb 75%, #cbcbcb);
+        background-image: linear-gradient(to top right, #cbcbcb 25%, transparent 25%, transparent 75%, #cbcbcb 75%, #cbcbcb),
+        linear-gradient(to top right, #cbcbcb 25%, transparent 25%, transparent 75%, #cbcbcb 75%, #cbcbcb);
+        background-size:20px 20px;
+        background-position:0 0, 10px 10px;
+    }
+
+    .form-input-image-button-container{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .form-input-image-upload{
+        width: 100%;
+        position: relative;
+        min-height: 50px;
+        background-color: #fff;
+        border: 1px solid #d2d2d2;
+        display: flex;
+        align-items: center;
+    }
+    .form-input-image-upload-display{
+        padding-left: 15px;
+    }
+    .form-input-image-upload-display.empty{
+        opacity: 0.5;
+    }
+
+
+    .form-input-image-btn{
+        float: right;
+        margin-left: 5px;
+    }
+    .form-input-image-btn-change{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .form-input-image-button-container{
+        position: absolute;
+        top: 9px;
+        right: 10px;
+    }
+    .form-input-image-wrapper .form-input-image-image-preview{
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    .form-input-image-label{
+        position: absolute;
+        color: #333;
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+        padding: 5px;
+        bottom: 0px;
+        z-index: 2;
+        left: 0px;
+    }
+    .form-input-image-hide{
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        background-color: #DDF;
+    }
+    .form-input-image-hide input[type="file"]{
+        cursor: pointer;
+        height: 100%;
+        position:absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        -moz-opacity: 0;
+        filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+    }
+
+    .form-input-image-btn-back   {
+        display: none;
+    }
+
+    .form-input-image .progress.active .progress-bar {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+
+    .form-input-image-hide{
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        background-color: #DDF;
+    }
+
+    .form-input-image-loading{
+        padding: 10px;
+        color: #333;
+        position: absolute;
+        width: 300px;
+        text-align: center;
+        height: 100%;
+        background-color: rgba(255,255,255,0.7);
+        z-index: 1;
+        opacity: 0;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        -webkit-transition: opacity .15s ease;
+        -o-transition: opacity .15s ease;
+        transition: opacity .15s ease;
+    }
+    .form-input-image-loading i.fa{
+        top: 50%;
+        margin-top: -20px;
+        position: absolute;
+        left: 50%;
+        margin-left: -20px;
+    }
+
+/* FIN COMPONENTE IMAGES */
+
+
+
+
+
+/* COMPONENTE FILES */
+
+.form-input-file{
+    width: 300px;
+}
+
+.form-input-file-images{
+    width: 100%;
+    position: relative;
+    min-height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #d2d2d2;
+}
+.form-input-file-images-button-container{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.form-input-file{
+    width: 100%;
+    position: relative;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    font-size: 1rem;
+    line-height: 16px;
+    color: #575757;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dcdfe3;
+    border-radius: 0.25rem;
+}
+.form-input-file-display{
+    padding-left: 0px;
+    cursor: pointer;
+}
+.form-input-file-display:not(.empty):hover{
+    text-decoration: underline;
+}
+.form-input-file-display.empty{
+    opacity: 0.5;
+    cursor: default;
+}
+.form-input-file-btn{
+    position: relative;
+    right: -1px;
+    height: 34px;
+    width: 40px;
+}
+.form-input-file-btn-change{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.form-input-file-button-container{
+    position: absolute;
+    top: -1px;
+    right: 0px;
+}
+.form-input-file-images .form-input-file-image-preview{
+    width: 100%;
+}
+
+.form-input-file-label{
+    position: absolute;
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    bottom: 0px;
+    z-index: 2;
+    left: 0px;
+}
+.form-input-file-hide{
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: #DDF;
+}
+
+.form-input-file-hide input[type="file"]{
+    cursor: pointer;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}
+
+.form-input-file-btn-back   {
+    display: none;
+}
+
+.form-input-file .progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+.form-input-file-hide{
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: #DDF;
+}
+
+.form-input-file-loading{
+    padding: 10px;
+    color: #333;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+    z-index: 1;
+    opacity: 0;
+    left: 0px;
+    width: 100%;
+    -webkit-transition: opacity .15s ease;
+    -o-transition: opacity .15s ease;
+    transition: opacity .15s ease;
+}
+.form-input-file-loading i.fa{
+    top: 50%;
+    margin-top: -20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+}
+
+/* FIN COMPONENTE FILES */
+
+
+
+
+/* REWRITES SUMMERNOTE */
+
+textarea+.note-editor{
+    margin-top: 15px;
+}
+
+/* FIN REWRITES SUMMERNOTE */
+
+
+
+/* REWRITES CHECKBOX */
+
+.css-checkbox{
+    top: -20px;
+}
+
+/* FIN REWRITES CHECKBOX */
+
+
+
+
+

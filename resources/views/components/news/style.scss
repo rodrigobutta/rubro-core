@@ -1,0 +1,96 @@
+@import "./resources/assets/sass/component";
+
+
+.news-slider-wrapper{
+    .col-lg-3 {
+        @include media-breakpoint-down(lg) {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.component-news {
+
+
+    .home-list-pt__block{
+        width: 25%;
+    }
+
+    .home-list-pt {
+        display: flex;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @at-root #{&}__block {
+            display: inline-block;
+            margin-left: .5rem;
+            margin-right: .5rem;
+
+            &:hover {
+                .home-list-pt__img {
+                    box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.2);
+                }
+
+                .home-list-pt__text,
+                .home-list-pt__subtitle {
+                    color: $cerulean;
+                }
+            }
+        }
+
+        @at-root #{&}__img {
+            width: 100%;
+            height: 12em;
+            margin-bottom: 1em;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            @include transition(all .2s ease-in-out);
+
+            @include media-breakpoint-down(lg) {
+                height: 10em;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 8em;
+            }
+
+            @include media-breakpoint-down(sm) {
+                height: 10em;
+            }
+
+            @include media-breakpoint-down(xs) {
+                height: 8em;
+            }
+        }
+
+        @at-root #{&}__subtitle {
+            display: block;
+            font-size: .625rem;
+            letter-spacing: 2px;
+            margin-bottom: .25rem;
+            text-transform: uppercase;
+            color: $greyish-brown;
+        }
+
+        @at-root #{&}__text {
+            color: $greyish-brown;
+            @include transition(all .2s ease-in-out);
+            font: $font-regular rem(18) $primary-font-family;
+            margin-bottom: 0;
+            @include media-breakpoint-down(md) {
+                font-size: rem(12);
+                line-height: 13px;
+            }
+        }
+    }
+
+
+}

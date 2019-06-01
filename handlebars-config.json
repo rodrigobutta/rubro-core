@@ -1,0 +1,4 @@
+[{
+    "path": "./public/tmp/templates/",
+    "command": "handlebars  ./public/tmp/templates/ -f ./public/js/templates.js --extension hbs"
+}]

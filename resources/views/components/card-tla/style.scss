@@ -1,0 +1,48 @@
+@import "./resources/assets/sass/component";
+
+.component-card-tla {
+    width: 100%;
+    max-width: 350px;
+
+    @at-root #{&}__wrapper {
+        padding: 1.3rem;
+        background-color: $white;
+        border-radius: 5px;
+        border: $border-item;
+        box-shadow: $box-shadow;
+    }
+
+    @at-root #{&}__title {
+        margin-top: 0;
+        margin-bottom: 2rem;
+
+        color: $greyish-brown;
+        font-weight: 600;
+        font-size: 1.375rem;
+    }
+
+    @at-root #{&}__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @at-root #{&}__item {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @at-root #{&}__highlighted {
+            font-weight: 600;
+            color: $cerulean;
+        }
+
+        @at-root #{&}__text {
+            font-weight: 400;
+            color: $greyish-brown;
+        }
+    }
+}

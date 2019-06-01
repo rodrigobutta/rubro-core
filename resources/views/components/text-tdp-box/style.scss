@@ -1,0 +1,64 @@
+@import "./resources/assets/sass/component";
+
+.component-text-tdp-box {
+    padding-bottom: 0 !important;
+
+    & + &,
+    & + .component-text-tid-box,
+    & + .component-text-da-box,
+    & + .component-text-h-box {
+        padding-top: 1rem;
+    }
+
+    @at-root #{&}__container {
+        display: flex;
+        padding: 1em 1.4em;
+        border-radius: 5px;
+        border: $border-item;
+        justify-content: space-between;
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        line-height: 1.4;
+
+        @at-root #{&}--bold {
+            display: block;
+            font-weight: bold;
+            margin-bottom: .5em !important;
+        }
+
+        p {
+            margin: 0 !important;
+        }
+
+        a {
+            color: $cerulean;
+            letter-spacing: -0.4px;
+            font: $font-regular rem(16) $primary-font-family;
+            line-height: 1.4;
+
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
+    @at-root #{&}__img {
+        width: 20%;
+        height: 3em;
+        object-fit: contain;
+        align-self: center;
+        object-position: right;
+    }
+    @include media-breakpoint-down(sm) {
+        @at-root #{&}__content {
+            width: 80%;
+            padding-right: 4%;
+        }
+        @at-root #{&}__text--bold {
+            margin-bottom: 0;
+        }
+    }
+}

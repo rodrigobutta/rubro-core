@@ -1,0 +1,46 @@
+@import "./resources/assets/sass/component";
+
+.component-text-da-box {
+    padding-bottom: 0 !important;
+
+    & + &,
+    & + .component-text-tid-box,
+    & + .component-text-h-box,
+    & + .component-text-tdp-box {
+        padding-top: 1rem;
+    }
+
+    @at-root #{&}__container {
+        display: flex;
+        padding: 1em 1.4em;
+        border-radius: 5px;
+        border: $border-item;
+        align-items: center;
+        justify-content: space-between;
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    @at-root #{&}__text p {
+        margin: 0;
+        color: $navy;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        line-height: 1.4;
+    }
+    .btn-ti-borderless {
+        justify-content: flex-end;
+    }
+    a:not(.btn-ti-borderless), a:not(.btn-ti-borderless):hover {
+        color: $cerulean;
+    }
+    @include media-breakpoint-down(sm) {
+       .btn-ti-borderless {
+            justify-content: flex-start;
+        }
+       @at-root #{&}__text {
+           margin-bottom: .8em;
+       }
+    }
+}

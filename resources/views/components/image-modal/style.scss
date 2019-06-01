@@ -1,0 +1,16 @@
+@import "./resources/assets/sass/component";
+
+.component-image {
+    width: 100%;
+    @at-root #{&}__wrapper {
+        height: 100%;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+    @at-root #{&}__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

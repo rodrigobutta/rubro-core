@@ -1,0 +1,116 @@
+/* doy un alto arriba para que no me coma el menu */
+// #page-container{
+//     padding-top: 100px;
+// }
+
+
+// extension del select2 para donde se necesiten iconitos en el dropdown
+.select2-with-icon{
+
+    .select2-results__option{
+        height: 60px;
+        line-height: 50px;
+
+        img.select2-icon{
+            width: 50px;
+            float: left;
+            margin-right: 5px;
+        }
+
+    }
+
+    &+.select2-container{
+        .select2-selection__rendered{
+
+            img.select2-icon{
+                width: 30px;
+                float: left;
+                margin-top: 2px;
+                margin-right: 5px;
+            }
+
+        }
+    }
+
+}
+
+
+// agregar sublinea en busqueda del select2
+
+.select2-dropdown{
+
+    li.select2-results__option{
+
+        .select2-result-data{
+
+            .select2-result-data__meta{
+
+                .select2-result-data__subtitle{
+                    color: #9E9E9E;
+                    font-size: 0.9em;
+                }
+
+            }
+
+        }
+
+        &.select2-results__option--highlighted{
+
+            .select2-result-data{
+
+                .select2-result-data__meta{
+
+                    .select2-result-data__subtitle{
+                        color: #f1f1f1;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+}
+
+
+
+// los blocks que se abren en un modal no deberian tener el margin bottom porque me genera espacio en el fondo del modal
+.modal-content{
+
+    .block{
+        margin-bottom: 0px;
+    }
+
+
+}
+
+
+// quiero que la barra del tree quede por debajo de la main bar
+#side-overlay{
+    // z-index: 1000 !important;
+    // top: 66px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05) !important;
+
+    .content-side{
+        padding-top: 0px;
+    }
+
+
+}
+
+// tooltips del store
+.popover{
+    max-width: 160px !important;
+}
+
+
+
+
+
+.block-fix-height{
+    height:calc(100% - 25px);
+}

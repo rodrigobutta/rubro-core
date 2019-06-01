@@ -1,0 +1,14 @@
+@import "./resources/assets/sass/component";
+
+.component-line {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    hr {
+        margin: 0;
+        position: relative;
+        border-top: $grey 1px solid;
+        &.has-margins {
+            margin: 40px 0;
+        }
+    }
+}

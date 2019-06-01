@@ -1,0 +1,59 @@
+@import "./resources/assets/sass/component";
+
+.component-text-tha-1c {
+    @at-root #{&}__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    @at-root #{&}__title {
+        color: $navy;
+        margin-bottom: .8em;
+        letter-spacing: -0.6px;
+        font: $font-medium rem(25) $primary-font-family;
+    }
+    p {
+        margin: 0;
+        margin-bottom: 1em;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        line-height: 1.4;
+
+        a, a:hover {
+            color: $cerulean;
+        }
+    }
+    blockquote {
+        color: $navy;
+        font-weight: 300;
+        font-size: rem(25);
+        &:before {
+            content: "\201C";
+        }
+        &:after {
+            content: "\201D";
+        }
+    }
+
+    @at-root #{&}__link {
+        position: relative;
+        display: block !important;
+        padding-right: 3rem;
+        white-space: normal;
+        text-align: right;
+
+        @at-root #{&}__text {
+            display: initial !important;
+            min-width: 0;
+            text-align: right;
+        }
+
+        @at-root #{&}__arrow {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}

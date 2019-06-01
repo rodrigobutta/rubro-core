@@ -1,0 +1,90 @@
+@import "./resources/assets/sass/component";
+
+.component-card-ptda-phone {
+    width: 100%;
+
+    @at-root #{&}__wrapper {
+        min-height: 20rem;
+        display: flex;
+        align-items: flex-end;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0px 20px 30px 0 rgba($black, 0.2);
+    }
+
+    @at-root #{&}__description {
+        margin-left: 1.6rem;
+        margin-bottom: 2.3rem;
+        margin-top: 2.3rem;
+        margin-right: 1.6rem;
+        color: $white;
+    }
+
+    @at-root #{&}__title {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        color: inherit;
+        font-weight: 400;
+        font-size: 1.9rem;
+
+        & + .component-card-ptda-phone__text {
+            margin-top: 1rem;
+        }
+
+        @at-root #{&}__highlighted {
+            display: block;
+            font-weight: 700;
+        }
+    }
+
+    @at-root #{&}__text {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        color: inherit;
+        font-size: 1rem;
+        font-weight: 400;
+
+        & + .component-card-ptda-phone__link {
+            margin-top: 1rem;
+        }
+    }
+
+    @at-root #{&}__link {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        color: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+
+        &:hover {
+            color: inherit;
+        }
+
+        @at-root #{&}__arrow {
+            display: inline-block;
+            vertical-align: middle;
+            vertical-align: text-bottom;
+            border-radius: 100px;
+            border: 1px solid $white;
+            z-index: 1;
+            font-size: 0;
+            color: transparent;
+            margin-left: .5rem;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                background-color: $white;
+                mask-image: url('/images/arrow.svg');
+                background-repeat: no-repeat;
+                padding: .6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import "./resources/assets/sass/component";
+
+.component-list-pvt {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+
+    @at-root #{&}__container {
+        padding: 0;
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+
+    @at-root #{&}__item {
+        display: block;
+        border-bottom: $border-item;
+        &:first-child {
+            border-top: $border-item;
+        }
+    }
+    @at-root #{&}__link {
+        height: 7em;
+        display: flex;
+        padding: 1em 0;
+        &:hover {
+            .component-list-pvt__img {
+                box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.2);
+            }
+            .component-list-pvt__p {
+                color: $cerulean;
+            }
+        }
+    }
+    @at-root #{&}__img {
+        width: 45%;
+        height: 100%;
+        margin-right: 1em;
+        @include transition(all .2s ease-in-out);
+    }
+
+    @at-root #{&}__text {
+        width: 55%;
+    }
+
+    @at-root #{&}__subtitle {
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        opacity: .5;
+        color: $greyish-brown;
+        text-transform: uppercase;
+        font: $font-regular rem(10) $primary-font-family;
+    }
+    @at-root #{&}__p {
+        line-height: 1.2;
+        margin-bottom: 0;
+        color: $greyish-brown;
+        @include transition(all .2s ease-in-out);
+        font: $font-medium rem(14) $primary-font-family;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        display: flex;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

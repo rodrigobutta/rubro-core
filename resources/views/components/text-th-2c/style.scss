@@ -1,0 +1,96 @@
+@import "./resources/assets/sass/component";
+
+.component-text-th-2c {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @at-root #{&}__title {
+        color: $navy;
+        margin-bottom: .8em;
+        width: 100%;
+        letter-spacing: -0.6px;
+        font: $font-bold rem(25) $primary-font-family;
+    }
+
+    @at-root #{&}__div {
+        margin: 0;
+        width: 48%;
+        list-style: none;
+        position: relative;
+        margin-bottom: 1em;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        line-height: 1.4;
+
+        h2, h3 {
+            font-size: rem(16);
+            font-weight: $font-bold;
+        }
+
+        h2 {
+            color: $navy;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 1em 0;
+            justify-content: flex-end;
+            border-bottom: $border-item;
+            @include media-breakpoint-down(sm) {
+                padding-bottom: 1.5em;
+            }
+        }
+
+        a {
+            color: $cerulean;
+
+            &:hover {
+                color: $cerulean;
+            }
+        }
+        blockquote {
+            color: $navy;
+            font-weight: 300;
+            font-size: rem(25);
+            &:before {
+                content: "\201C";
+            }
+            &:after {
+                content: "\201D";
+            }
+        }
+    }
+
+    @at-root #{&}__link {
+        position: relative !important;
+        display: block !important;
+        padding-right: 3rem !important;
+        white-space: normal;
+        text-align: right;
+
+        @at-root #{&}__text {
+            display: initial !important;
+            min-width: 0;
+            text-align: right;
+        }
+
+        @at-root #{&}__arrow {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+
+        @at-root #{&}__div {
+            width: 100%;
+            margin-bottom: 2.5em;
+        }
+    }
+}

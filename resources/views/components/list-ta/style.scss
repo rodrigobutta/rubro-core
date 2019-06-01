@@ -1,0 +1,89 @@
+@import "./resources/assets/sass/component";
+
+.component-list-ta {
+
+    li {
+        list-style: none;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        min-height: 8em;
+        padding: 1.2em 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: $border-item;
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        color: $navy;
+        line-height: 1.4;
+        padding-left: 2em;
+        letter-spacing: -0.4px;
+        font: $font-medium rem(22) $primary-font-family;
+        @include media-breakpoint-down(xs) {
+            font-size: rem(18);
+        }
+    }
+    .btn-ti {
+        .btn {
+            height: 4em;
+            display: flex;
+            margin-top: 0;
+            padding: 0 2.5em;
+            border-radius: 5px;
+            border: $border-item;
+            color: $greyish-brown;
+            align-items: center;
+            justify-content: center;
+            font: $font-medium rem(16) $primary-font-family;
+            &:hover {
+                color: $white;
+                background: $cerulean;
+            }
+            svg {
+                height: 1em;
+                display: block;
+                margin-left: 1em;
+                fill: $greyish-brown;
+            }
+            &:hover svg {
+                fill: $white;
+            }
+        }
+        @at-root #{&}-portrait {
+            width: 100%;
+            .btn {
+                height: 4.5em;
+                &:hover {
+                    box-shadow: $btn-box-shadow;
+                }
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .btn {
+            width: 100%;
+            margin-top: 1em;
+        }
+        @at-root #{&}__text {
+            padding-left: 0;
+        }
+        @at-root #{&}__item {
+            height: auto;
+            padding: 2em 0;
+        }
+    }
+}

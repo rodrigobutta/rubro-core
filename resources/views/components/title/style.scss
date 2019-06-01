@@ -1,0 +1,64 @@
+@import "./resources/assets/sass/component";
+
+.component-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+
+    & + .component {
+        padding-top: 0;
+    }
+
+    @at-root #{&}__text {
+        color: $navy;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 2;
+        position: relative;
+
+        @at-root #{&}__span {
+            @at-root #{&}--bold {
+                font-weight: 700;
+            }
+        }
+    }
+
+    @at-root #{&}__link {
+        position: relative;
+        padding-right: 3rem;
+        max-width: 50%;
+        margin-left: 2rem;
+        
+        color: $navy;
+        font-size: 1rem;
+        font-weight: 700;
+
+
+        @at-root #{&}__text {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            color: $navy;
+
+            .component-title__link__arrow {
+                background: url(/images/arrow-right_hover.svg) no-repeat center;
+            }
+        }
+
+        @at-root #{&}__arrow {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+
+            display: inline-block !important;
+            vertical-align: middle;
+        }
+    }
+}

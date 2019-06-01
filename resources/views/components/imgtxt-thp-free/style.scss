@@ -1,0 +1,102 @@
+@import "./resources/assets/sass/component";
+
+.component-imgtxt-thp-free {
+    display: flex;
+
+    @at-root #{&}__text {
+        width: 65%;
+        padding-right: 10%;
+        z-index: 2;
+        a {
+            color: $cerulean;
+        }
+        p {
+            font-size: rem(16);
+            color: $greyish-brown;
+            letter-spacing:-0.4px;
+            line-height: 1.4;
+        }
+        blockquote {
+            color: $navy;
+            font-weight: 300;
+            font-size: rem(25);
+            &:before {
+                content: "\201C";
+            }
+            &:after {
+                content: "\201D";
+            }
+        }
+    }
+    @at-root #{&}__title {
+        color: $navy;
+        margin-bottom: 1rem;
+        letter-spacing: -0.6px;
+        font: $font-bold rem(25) $primary-font-family;
+        z-index: 2;
+    }
+    @at-root #{&}__desc {
+        color: $greyish-brown;
+        font: $font-regular rem(16) $primary-font-family;
+        z-index: 2;
+    }
+    @at-root #{&}__highlighted {
+        margin-top: 2.5em;
+        padding: 1em 1.2em;
+        border: 1px solid #9f9f9f;
+        border-radius: 5px;
+        @at-root #{&}-title {
+            color: $navy;
+            font: $font-regular rem(22) $primary-font-family;
+        }
+        @at-root #{&}-text {
+            margin: 0;
+            margin-top: 1em;
+            color: $greyish-brown;
+            font: $font-regular rem(16) $primary-font-family;
+            &:nth-of-type(1) {
+                margin-top: 0;
+            }
+        }
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @at-root #{&}__img {
+        width: 35%;
+        z-index: 2;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            height: auto;
+            width: 100%;
+            border-radius: 10px;
+        }
+        &.hidden-md {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+        &.visible-md {
+            display: none;
+            @include media-breakpoint-down(sm) {
+                height: auto;
+                display: block;
+                margin: 1em 0;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        @at-root #{&}__text{
+            width: 100%;
+            padding-right: 0;
+        }
+        @at-root #{&}__img {
+            width: 100%;
+            height: 10em;
+        }
+    }
+}

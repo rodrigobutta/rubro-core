@@ -1,0 +1,147 @@
+@import "./resources/assets/sass/component";
+
+.component-list-itda-drop {
+    display: flex;
+
+    li {
+        list-style: none;
+    }
+
+    @include media-breakpoint-down(md){
+        flex-direction: column;
+    }
+    @at-root #{&}__container {
+        width: 65%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+        }
+    }
+    @at-root #{&}__item {
+        width: 50%;
+        display: flex;
+        margin-bottom: 2.5em;
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+    @at-root #{&}__icon {
+        width: 2em;
+        height: 2em;
+        display: block;
+        opacity: 0.85;
+    }
+    @at-root #{&}__text {
+        z-index: 2;
+        margin: 0;
+        line-height: 1.4;
+        margin-left: 1em;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-light rem(16) $primary-font-family;
+        span {
+            display: block;
+            margin-top: .2em;
+        }
+    }
+    @at-root #{&}__form {
+        width: 35%;
+        margin-bottom: 2em;
+        @at-root #{&}--title {
+            color: $cerulean;
+            font: $font-bold rem(22) $primary-font-family;
+        }
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+        .selectric {
+            width: 100%;
+            height: 2.5em;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 2em;
+            background-color: $white;
+            @include transition(all 0.2s ease-in);
+            border-bottom: 1px solid $border-color;
+            font: $font-regular rem(16) $primary-font-family;
+
+            .button {
+                background-color: transparent;
+                &::after {
+                    height: .5rem;
+                    width: .5rem;
+                    border: none;
+                    border-right: 2px solid $navy;
+                    border-bottom: 2px solid $navy;
+                    transform: rotate(45deg);
+                    transition: transform .2s ease-in-out;
+                }
+            }
+
+            .label {
+                margin: 0;
+                font-size: rem(16);
+                color: $greyish-brown;
+            }
+            @at-root #{&}-wrapper {
+                width: 100%;
+                z-index: 10 !important;
+            }
+
+            @at-root #{&}-open {
+                z-index: 100;
+                .button::after {
+                    top: .3em;
+                    transform: rotate(-135deg);
+                    transform-origin: 50% 50%;
+                }
+            }
+
+            @at-root #{&}-items {
+                border: none;
+                background-color: $white;
+                @include media-breakpoint-up(md) {
+                    height: auto !important;
+                }
+            }
+            @at-root #{&}-scroll {
+                ul {
+                    padding: 1.5em 0;
+                    li {
+                        cursor: pointer;
+                        padding-left: 1.2em;
+                        padding-right: 1.2em;
+                        font-size: rem(16);
+                        color: $greyish-brown;
+                        transition: all .2s ease-in-out;
+
+                        &.selected, &.highlighted, &:hover {
+                            background: transparent;
+                        }
+                        &:hover {
+                            color: $cerulean;
+                        }
+                        &[data-index="0"] {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            }
+
+            .btn-t-portrait {
+                margin: 1em 0;
+            }
+
+        }
+    }
+
+

@@ -1,0 +1,37 @@
+@import "./resources/assets/sass/component";
+
+.component-list-th {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+    *:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        padding: 2.5em 0 1.5em;
+        border-bottom: $border-color 1px solid;
+    }
+    @at-root #{&}__title {
+        color: $navy;
+        margin-bottom: .8em;
+        font: $font-medium rem(22) $primary-font-family;
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        line-height: 1.4;
+        margin-bottom: 1em;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+    }
+}

@@ -1,0 +1,39 @@
+@import "./resources/assets/sass/component";
+
+.component-btn-p-streched {
+    display: flex;
+    justify-content: space-between;
+    .btn-p {
+        width: 25%;
+        flex-grow: 1;
+        margin-right: 2%;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @at-root #{&}__img {
+            height: 3em;
+            filter: gray;
+            filter: grayscale(1);
+            -webkit-filter: grayscale(1);
+            @include transition(all .2s);
+        }
+
+        &:hover {
+            box-shadow: 0px 20px 30px 0 rgba(0, 0, 0, 0.2);
+            .btn-p__img {
+                -webkit-filter: grayscale(0);
+                filter: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        .btn-p {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+}

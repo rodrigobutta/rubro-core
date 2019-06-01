@@ -1,0 +1,27 @@
+@import "./resources/assets/sass/component";
+
+.component-list-a {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        padding: 1.5em 0;
+        border-bottom: $border-item;
+    }
+    @at-root #{&}__link {
+        color: $greyish-brown;
+        @include transition(all .2s ease-in-out);
+        font: $font-bold rem(16) $primary-font-family;
+    }
+}

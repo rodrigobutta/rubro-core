@@ -1,0 +1,47 @@
+@import "./resources/assets/sass/component";
+
+.component-list-it-landscape {
+    li {
+        list-style: none;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        width: 12.5%;
+        flex-grow: 1;
+        margin: 1.5em 0;
+        padding: 0 2%;
+        text-align: center;
+        @include media-breakpoint-down(md){
+            width: 25%;
+            flex: 0 0 25%;
+        }
+        @include media-breakpoint-down(sm){
+            width: 33.3%;
+            flex: 0 0 33.3%;
+        }
+    }
+    @at-root #{&}__icon {
+        height: 5em;
+        display: block;
+    }
+    @at-root #{&}__text {
+        margin-top: 1em;
+        color: $greyish-brown;
+        @include transition(all .2s ease-in-out);
+        font: $font-bold rem(16) $primary-font-family;
+        @include media-breakpoint-down(xs) {
+            font-size: rem(14);
+        }
+    }
+    @at-root #{&}__link {
+        &:hover .component-list-it-landscape__text {
+            color: $cerulean;
+        }
+    }
+}

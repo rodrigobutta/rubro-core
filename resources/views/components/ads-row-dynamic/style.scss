@@ -1,0 +1,53 @@
+@import "./resources/assets/sass/component";
+.component-ads-row-dynamic {
+    display: flex;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    .container {
+        display: flex;
+    }
+    @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+    }
+    .component-ads-row__card {
+        position: relative;
+        display: inline-block;
+        flex: 1 1 100%;
+        background-color: $white;
+        margin-right: 1rem;
+        text-align: center;
+        transition: all .15s ease;
+        &:last-of-type {
+            margin-right: 0;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $white;
+            background-color: $cerulean;
+            box-shadow: 0px 10px 15px 0 rgba($black, 0.1);
+        }
+        @include media-breakpoint-down(sm) {
+            flex-shrink: 0;
+            margin-right: 0;
+            margin-bottom: 1rem;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        @at-root #{&}__image {
+            width: 100%;
+            &.desktop {
+                display: none;
+                @include media-breakpoint-up(md) {
+                    display: block;
+                }
+            }
+            &.mobile {
+                display: none;
+                @include media-breakpoint-down(sm) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import "./resources/assets/sass/component";
+
+.component-list-itd {
+    li {
+        list-style: none;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: -2.5rem;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        width: 25%;
+        padding-right: 2%;
+        margin-bottom: 2.5em;
+        @include media-breakpoint-down(sm){
+            width: 50%;
+            padding-right: 5%;
+        }
+    }
+    @at-root #{&}__icon {
+        height: 5.5em;
+        display: block;
+        @include media-breakpoint-down(xs) {
+            height: 4em;
+        }
+    }
+    @at-root #{&}__title {
+        max-width: 8em;
+        min-height: 4em;
+        margin: 0.5em 0 0;
+        color: $greyish-brown;
+        @include transition(all .2s ease-in-out);
+        font: $font-medium rem(22) $primary-font-family;
+        @include media-breakpoint-down(sm) {
+            font-size: rem(20);
+            min-height: 3em;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: rem(18);
+        }
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        line-height: 1.4;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        @include media-breakpoint-down(xs) {
+            font-size: rem(14);
+        }
+    }
+    @at-root #{&}__link {
+        &:hover .component-list-itd__title {
+            color: $cerulean;
+        }
+    }
+
+    &.-grow {
+        .component-list-itd__item {
+            flex-grow: 1;
+        }
+    }
+}

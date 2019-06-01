@@ -1,0 +1,28 @@
+@import "./resources/assets/sass/component";
+
+.component-btn-list-a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    li {
+        list-style: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

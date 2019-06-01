@@ -1,0 +1,19 @@
+@import "./resources/assets/sass/component";
+
+.component-title-small {
+
+    & + .component {
+        padding-top: 0;
+    }
+
+    @at-root #{&}__text {
+        z-index: 2;
+        color: $navy;
+        font-size: 1rem;
+        margin-top: 0;
+        letter-spacing: -1px;
+        font-weight: $font-bold;
+        position: relative;
+    }
+
+}

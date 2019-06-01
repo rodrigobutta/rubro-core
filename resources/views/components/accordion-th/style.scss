@@ -1,0 +1,73 @@
+@import "./resources/assets/sass/component";
+
+.component-accordion-th {
+
+    .accordion {
+        width: 100%;
+        padding-left: 0;
+        border-top: $border-item;
+
+        @at-root #{&}__dropdown {
+            list-style: none;
+            padding: 1.5em 0;
+            position: relative;
+            border-bottom: $border-item;
+        }
+        @at-root #{&}__label {
+            margin: 0;
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            user-select: none;
+            padding-left: 4rem;
+            position: relative;
+            color: $navy !important;
+            font: $font-regular rem(22) $primary-font-family;
+            @include media-breakpoint-down(xs) {
+                padding-left: 3rem;
+                font-size: rem(20);
+            }
+
+            &:before {
+                content: "";
+                top: 0;
+                left: 0;
+                width: 1.5em;
+                height: 1.5em;
+                position: absolute;
+                @include transition(all .2s ease-in-out);
+                background: url('images/arrow-right.svg') no-repeat center;
+                background-size: contain;
+            }
+            &.active:before {
+                transform: rotate(90deg);
+                @include transition(all .2s ease-in-out);
+            }
+        }
+        @at-root #{&}__content {
+            display: none;
+            padding-top: 1em;
+            padding-left: 4rem;
+            @include media-breakpoint-down(xs) {
+                padding-left: 3rem;
+            }
+
+            p, a {
+                margin: 1em 0;
+                color: $greyish-brown;
+                font: $font-regular rem(16) $primary-font-family;
+            }
+            a {
+                color: rgb(8, 82, 148);
+                @include transition(color .2s ease-in-out);
+                &:hover {
+                    color: $cerulean;
+                }
+            }
+
+        }
+
+    }
+
+}
+

@@ -1,0 +1,260 @@
+.component {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    &.hidden {
+        opacity: 0.4;
+    }
+    &:first-child {
+        padding-top: 0;
+    }
+    &:last-child {
+        padding-bottom: 5rem !important;
+    }
+    *:not(.bg) {
+        z-index: 1;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    a,
+    ul,
+    blockquote {
+        position: relative;
+    }
+    .btn {
+        //display: block;
+        &:focus,
+        &:active {
+            outline: 0;
+            box-shadow: none;
+        }
+        span {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @at-root #{&}-ti-borderless {
+            display: flex;
+            min-width: 10em;
+            align-items: center;
+            color: $greyish-brown;
+            font: $font-medium rem(16) $primary-font-family;
+            &:after {
+                content: "";
+                width: 1.5em;
+                height: 1.6em;
+                display: block;
+                margin-left: .6em;
+                background: url('../../img/arrow-download.svg') no-repeat center;
+                background-size: contain;
+                @include transition(all .15s ease-in-out);
+            }
+            &:focus,
+            &:active {
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+        @at-root #{&}-ti {
+            height: auto;
+            position: relative;
+            margin-top: 0;
+            padding: 1.5rem 2rem;
+            padding-right: 4rem;
+            border-radius: 5px;
+            border: $border-item;
+            color: $greyish-brown;
+            text-align: center;
+            justify-content: center;
+            @include transition(all .15s ease-in-out,
+            box-shadow .2s ease-in-out);
+            font: $font-medium rem(16) $primary-font-family;
+            white-space: normal;
+            vertical-align: middle;
+            &:after,
+            span::after {
+                content: "";
+                width: 1.5em;
+                height: 1.6em;
+                display: inline-block;
+                margin-left: .6em;
+                vertical-align: middle;
+                background: url('../../img/arrow-download.svg') no-repeat center;
+                background-size: contain;
+                @include transition(all .15s ease-in-out);
+            }
+            &:hover {
+                color: $white;
+                background: $cerulean;
+                &:after,
+                span::after {
+                    background: url('../../img/arrow-download_white.svg') no-repeat center;
+                    background-size: contain;
+                }
+            }
+            @at-root #{&}-portrait {
+                width: 100%;
+                // height: 4.5rem;
+                &:hover {
+                    box-shadow: $btn-box-shadow;
+                }
+                /* @include media-breakpoint-down(sm) {
+                    height: 4rem;
+                } */
+            }
+            &:focus,
+            &:active {
+                outline: 0;
+                box-shadow: none;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin-top: 1em;
+                // height: 4rem;
+            }
+        }
+        @at-root #{&}-t {
+            height: auto;
+            display: block;
+            margin-top: 0;
+            padding: 1.5em;
+            border-radius: 5px;
+            border: $border-item;
+            color: $greyish-brown;
+            text-align: center;
+            @include transition(all .2s ease-in-out);
+            font: $font-medium rem(16) $primary-font-family;
+            white-space: normal;
+            /* @include media-breakpoint-down(sm) {
+                height: 4rem;
+            } */
+            &:hover {
+                color: $white;
+                background: $cerulean;
+                box-shadow: $btn-box-shadow;
+            }
+            @at-root #{&}-portrait {
+                width: 100%;
+                // height: 4.5rem;
+                &:hover {
+                    box-shadow: $btn-box-shadow;
+                }
+                @include media-breakpoint-down(sm) {
+                    height: 4rem;
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin-top: 1em;
+                // height: 4rem;
+            }
+            &:focus,
+            &:active {
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+        @at-root #{&}-p {
+            display: flex;
+            height: 4.5rem;
+            margin-top: 0;
+            padding: 0 5%;
+            border-radius: 5px;
+            background: $white;
+            border: $border-item;
+            align-items: center;
+            justify-content: center;
+            @include transition(all .3s ease-in-out);
+            @at-root #{&}__img {
+                height: calc(100% - 1.5em);
+                width: 100%;
+                object-fit: contain;
+            }
+            &:focus,
+            &:active {
+                outline: 0;
+                box-shadow: none;
+            }
+            @include media-breakpoint-down(sm) {
+                height: 4rem;
+            }
+        }
+        @at-root #{&}--arrow-right {
+            display: flex;
+            align-items: center;
+            color: $greyish-brown;
+            font: $font-bold rem(16) $primary-font-family;
+            @include transition(all .3s ease-in-out);
+            @at-root #{&}__icon {
+                width: 2rem;
+                height: 2rem;
+                display: block;
+                margin-left: 1em;
+                background: url('../../img/arrow-right.svg') no-repeat center;
+                background-size: contain;
+                @include transition(all .3s ease-in-out);
+            }
+            &:hover {
+                color: $navy;
+                .btn--arrow-right__icon {
+                    background: url('../../img/arrow-right_hover.svg') no-repeat center;
+                    background-size: contain;
+                }
+            }
+            &:focus,
+            &:active {
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+    }
+    .table {
+        &.table-bordered {
+            border-radius: 5px;
+        }
+        tr {
+            &:nth-child(even) {
+                background: $white;
+            }
+            &:nth-child(odd) {
+                background: $cerulean-light;
+            }
+            &:nth-of-type(1) {
+                color: $white;
+                font-weight: 500;
+                background: $cerulean;
+            }
+            td {
+                padding: 15px;
+                border: none;
+            }
+        }
+    }
+
+    .idle-screenshot{
+        display: none;
+        width: 100%;   
+    }
+
+
+}
+
+// los componentes que tengan clase hidden, no deben aparecer en el public. En el admin se muestran con opacity
+body.is-public {
+    .component {
+        &.hidden {
+            display: none;
+        }
+
+        .idle-screenshot{
+            display: none;
+        }
+
+
+    }
+}

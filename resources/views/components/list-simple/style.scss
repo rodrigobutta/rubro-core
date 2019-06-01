@@ -1,0 +1,63 @@
+@import "./resources/assets/sass/component";
+
+.component-list-simple {
+    width: 100%;
+
+    li {
+        list-style: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @at-root #{&}__container {
+        width: 100%;
+        padding: 0;
+    }
+    @at-root #{&}__item {
+        margin-bottom: 2em;
+    }
+    @at-root #{&}__link {
+        display: flex;
+        @include transition(all .2s ease-in-out);
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+        }
+        &:hover {            
+            .component-list-simple__title {
+                color: $cerulean;
+            }
+        }
+    }
+    @at-root #{&}__col {
+        position: relative;
+        &.right {
+            width: 100%;
+            padding: 0 6%;
+        }
+        @include media-breakpoint-down(xs) {
+            &.left, &.right {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    } 
+    @at-root #{&}__title {
+        margin: 1em 0 .6em;
+        color: $greyish-brown;
+        @include transition(all .2s ease-in-out);
+        font: $font-bold rem(22) $primary-font-family;
+    }
+    @at-root #{&}__text {
+        margin: 0;
+        line-height: 1.4;
+        margin-bottom: .8em;
+        color: $greyish-brown;
+        letter-spacing: -0.4px;
+        font: $font-regular rem(16) $primary-font-family;
+        strong {
+            font-weight: $font-medium;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@import "./resources/assets/sass/component";
+
+.component-btn-p-stacked {
+    display: flex;
+    flex-wrap: wrap;
+    .btn-p {
+        width: 23.5%;
+        height: 14em !important;
+        padding: 2% 3% !important;
+        margin-bottom: 2%;
+        margin-right: 2%;
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 2% 4% !important;
+            height: 12em !important;
+        }
+        @include media-breakpoint-down(sm) {
+            width: 48.5%;
+            margin-bottom: 3%;
+            margin-right: 3%;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            height: 10em !important;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            box-shadow: $btn-box-shadow;
+        }
+        @at-root #{&}__img {
+            height: 85% !important;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

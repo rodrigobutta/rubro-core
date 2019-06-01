@@ -1,0 +1,48 @@
+.plan-edit-page{
+
+    .columns-wrapper{
+        overflow: scroll;
+        min-height: calc(100vh - 230px);
+
+        .columns{      
+            width: max-content;
+        
+            .column{
+                width: 400px;
+                margin: 0px 15px;
+                float: left;
+
+                .block{
+                    .title{
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        
+    
+        }
+
+    }
+
+ 
+
+  
+ 
+    .point {
+        padding: 10px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;        
+    }
+    .point h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    .point p:last-child {
+        margin-bottom: 0;
+    }
+   
+
+
+}

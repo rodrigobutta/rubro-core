@@ -1,0 +1,53 @@
+@import "./resources/assets/sass/component";
+
+.component-publi-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .btn-p {
+        width: 23.5%;
+        // height: 14em !important;
+        padding: 0em !important;
+        margin-bottom: 2%;
+        border: 0px !important;
+        border-radius: 0px !important;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            box-shadow: $btn-box-shadow;
+        }
+        @at-root #{&}__img {
+            height: 100% !important;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        // .btn-p {
+            // height: 10em;
+            // padding: 1.5em;
+        // }
+    }
+    @include media-breakpoint-down(sm) {
+        .btn-p {
+            width: 48%;
+            margin-bottom: 3%;
+        }
+    }
+}
+
+
+.holder-sidebar {
+    .component:first-child {
+        padding-top: 0 !important;
+    }
+    .component-publi-1 {
+        .btn-p {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}

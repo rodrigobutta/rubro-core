@@ -1,0 +1,531 @@
+//Mixins
+@mixin transition($secs) {
+    -webkit-transition: all $secs ease-in-out;
+    -moz-transition: all $secs ease-in-out;
+    -ms-transition: all $secs ease-in-out;
+    -o-transition: all $secs ease-in-out;
+    transition: all $secs ease-in-out;
+}
+
+@mixin position($pos,$top,$right,$bottom,$left) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+//Font Family
+// @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+@import url('//fonts.googleapis.com/css?family=Roboto Condensed&subset=latin');
+
+$rubik: 'Roboto Condensed', sans-serif;
+$calendar-font: $rubik;
+
+//Font Weights
+$font-regular: 400;
+$font-semibold: 500;
+$font-bold: 700;
+
+ //Font Sizes
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+//Colors
+$light-blue: #f2f8fc;
+$light-gray: #e5e5e5;
+
+$event-border-color: $cerulean;
+$event-bg-color: $light-blue;
+$calendar-color: $greyish-brown;
+$calendar-header-color: $navy;
+
+$box-shadow: 0px 26px 57px 0 rgba(0, 0, 0, 0.11);
+$hover-shadow: 8.5px 6.9px 8.6px 0.4px rgba(0, 0, 0, 0.07);
+$modal-shadow: 0px 26px 57px 0 rgba(0, 0, 0, 0.11);
+
+$default-font: 'Roboto Condensed', sans-serif;
+
+$event-bg-color:  #f3f9fd;
+$event-border-color: #bf0811;
+
+$calendar-header-bg-color: $cerulean;
+$calendar-border-color: #efefef;
+
+$event-height: 50px;
+$event-default-tab-color: #ffaa3c;
+
+.-color-blue { color: $cerulean; }
+
+* {
+    box-sizing: border-box;
+}
+
+#calendar {
+    width: 80%;
+    margin: auto;
+    padding-top: 2em;
+    position: relative;
+    font-family: $calendar-font;
+
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    * {
+        box-sizing: border-box !important;
+    }
+
+    .fc-view-container {
+        margin: 1em 0 6em;
+        box-shadow: $box-shadow;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 0;
+        }
+    }
+
+    .fc-toolbar.fc-header-toolbar {
+        display: flex;
+        margin-bottom: 2em;
+        align-items: center;
+        justify-content: center;
+
+        .fc-left {
+            order: 1;
+        }
+        .fc-center {
+            order: 2;
+        }
+        .fc-right {
+            order: 3;
+        }
+    }
+
+    .fc-basic-view .fc-body .fc-row {
+        height: 12.5em !important;
+        @include media-breakpoint-down(sm) {
+            height: 8em !important;
+        }
+        @include media-breakpoint-down(xs) {
+            //height: 6em !important;
+            min-height: 2em;
+            .fc-bg td.fc-day.fc-widget-content {
+                border-right-color: transparent;
+                border-left-color: transparent;
+            }
+        }
+    }
+
+    .fc-day-header.fc-widget-header {
+        border: none;
+        padding: .8em 0;
+    }
+
+    td.fc-day.fc-today, td.fc-has-events {
+        background: $event-bg-color;
+    }
+    td.fc-has-events {
+        box-sizing: border-box !important;
+        &::after {
+            content: "";
+            display: block;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            border-left: 6px solid $cerulean;
+        }
+    }
+
+    .fc-center, .fc-day-header {
+        text-transform: capitalize;
+    }
+
+    .fc-day-header {
+        font-size: rem(17);
+    }
+
+    .fc-center h2 {
+        color: $navy;
+        font-size: rem(21);
+    }
+
+    td.fc-day-top.fc-other-month {
+        visibility: hidden;
+    }
+
+    td.fc-day-top.fc-today .fc-day-number {
+        color: $cerulean;
+    }
+
+//   td.fc-day.fc-today {
+//         background: $event-bg-color;
+//         border-color: #cce9f7;
+//         position: relative;
+//         &::before {
+//             content: '';
+//         position: absolute;
+//         display: block;
+//         left: -1px;
+//         top: -1px;
+//         right: -1px;
+//         bottom: -1px;
+//         border: 1px solid #cce9f7;
+//         z-index: 1;
+//         }
+//     }
+
+
+  .fc-day-top .fc-day-number {
+    float: left;
+    padding: .8rem 1rem;
+    font-size: rem(17);
+    padding-bottom: .2em;
+    color: $greyish-brown;
+    font-weight: $font-semibold;
+    @include media-breakpoint-down(sm) {
+        padding: .8rem .8rem;
+    }
+  }
+
+  .fc-button {
+    border: none;
+    width: 2.2em;;
+    height: 2.2em;;
+    display: block;
+    margin: 0 1.5em;
+    cursor: pointer;
+    box-shadow: none;
+    position: relative;
+    background: url('../../img/arrow-right.svg') no-repeat center;
+    background-size: contain;
+    @include transition(all .15s ease-in-out);
+    .fc-icon {
+        display: none;
+    }
+    &:focus, &:active {
+        outline: 0;
+    }
+
+    &:hover {
+        background: url('../../img/arrow-right_hover.svg') no-repeat center;
+        background-size: contain;
+    }
+
+    &.fc-prev-button {
+        @include rotate(180deg);
+    }
+  }
+
+  .fc-event, .fc-event-dot {
+    border: none;
+    background: transparent;
+  }
+
+  .fc-event, .fc-event:hover {
+    cursor: default;
+  }
+
+  .fc-event[href], .fc-event[href]:hover {
+    cursor: pointer;
+  }
+  .fc-event[href]:hover {
+      .fc-content::before {
+          background: $cerulean;
+      }
+      .fc-time, .fc-title {
+          color: $cerulean;
+          transition: all .15s ease-in-out;
+      }
+  }
+
+  .fc-day-grid-event .fc-content {
+    white-space: normal;
+
+    @include media-breakpoint-down(sm) {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer; // for showing title 
+        max-height:20px; // can be adjusted according to your requirement
+        color: $greyish-brown;
+    }
+    
+    &:before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        margin-bottom: .2em;
+        margin-right: .1em;
+        display: inline-block;
+        background: $cerulean;
+        transition: all .15s ease-in-out;
+    }
+    .fc-title {
+        font-size: rem(13);
+        font-weight: $font-semibold;
+      }
+
+      .fc-time, .fc-title {
+        color: $cerulean;
+        font-family: $calendar-font;
+        transition: all .15s ease-in-out;
+      }
+
+      .fc-desc {
+        color: $greyish-brown;
+        font-weight: normal;
+      }
+  }
+  
+
+  a.fc-more {
+    font-weight: $font-semibold;
+    font-size: rem(14);
+    @include media-breakpoint-down(sm) {
+        top: 0;
+        bottom: 0;
+        width: 20%;
+        height: 8em;
+        margin-right: 0;
+        margin-left: -10px;
+        position: absolute;
+        text-indent: -9999px;
+        &::after {
+            content: "";
+            width:10px;
+            height: 10px;
+            display: block;
+            margin-left: 1em;
+            margin-top: 1.5em;
+            border-radius: 50%;
+            background-color: $cerulean;
+        }
+    }
+    @include media-breakpoint-down(xs) {
+       &::after {
+            margin-top: 2em;
+       }
+    }
+  }
+
+  .fc-row .fc-content-skeleton tbody td, .fc-row .fc-helper-skeleton tbody td {
+    padding: .2rem .8rem;
+  }
+
+  .fc-more {
+      color: $calendar-color;
+      &:hover {
+          color: $cerulean;
+      }
+  }
+
+  //Modal
+  .fc-popover.fc-more-popover {
+    top: 30% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto;
+    width: 60%;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: $modal-shadow;
+    background: $white;
+    &:before {
+        content: "";
+        height: 100%;
+        width: 100vw;
+        display: block;
+        z-index: -1;
+        @include position(fixed,0,0,0,0);
+        background: rgba(0,0,0,.3);
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 80%;
+    }
+    @include media-breakpoint-down(xs) {
+        width: 90%;
+    }
+    .fc-event-container {
+        padding: 2em;
+        padding-top: 0;
+    }
+    .fc-header {
+        padding: 2em;
+        display: flex;
+        z-index: 5;
+        padding-bottom: 1.5em;
+        background: white;
+        justify-content: space-between;
+        .fc-close {
+            order: 2;
+            color: $greyish-brown;
+            &:hover {
+                color: $cerulean;
+            }
+        }
+        .fc-title {
+            z-index: 2;
+            color: $navy;
+            font-size: rem(22);
+            font-weight: $font-semibold;
+            font-family: $primary-font-family;
+        }
+    }
+    .fc-body {
+        background-color: $white;
+        &::before {
+            content: "";
+            background: white;
+            display: block;
+            height: 2px;
+            width: 100%;
+        }
+    }
+    .fc-content {
+        &::before {
+            display: none;
+        }
+    }
+    .fc-day-grid-event {
+        margin-bottom: 1em;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .fc-title, .fc-time {
+        font-size: rem(15);
+        color: $cerulean;
+        font-weight: $font-semibold;
+    }
+
+    .fc-desc {
+        font-size: rem(15);
+        color: $greyish-brown;
+    }
+
+  }
+
+}
+
+.calendar--filter {
+    display: flex;
+    padding-top: 2em;
+    margin-bottom: 1em;
+    justify-content: space-between;
+    @include media-breakpoint-down(sm) {
+        padding-top: 1em;
+        margin-bottom: 3em;
+        flex-direction: column;
+
+    }
+    @at-root #{&}__text {
+        width: 49%;
+        color: $navy;
+        font-size: rem(21);
+        margin-bottom: 0;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+
+    .selectric {
+        width: 100%;
+        height: 2.5em;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        background-color: $white;
+        @include transition(all 0.2s ease-in);
+        border-bottom: 1px solid $light-gray;
+        font: $font-regular rem(16) $primary-font-family;
+
+        .button {
+            background-color: transparent;
+            &::after {
+                height: .5rem;
+                width: .5rem;
+                border: none;
+                border-right: 2px solid $navy;
+                border-bottom: 2px solid $navy;
+                transform: rotate(45deg);
+                transition: transform .2s ease-in-out;
+            }
+        }
+
+        .label {
+            margin: 0;
+            font-size: rem(16);
+            color: $greyish-brown;
+        }
+        @at-root #{&}-wrapper {
+            width: 49%;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+
+        @at-root #{&}-open {
+            z-index: 100;
+            .button::after {
+                top: .3em;
+                transform: rotate(-135deg);
+                transform-origin: 50% 50%;
+            }
+        }
+
+        @at-root #{&}-items {
+            border: none;
+            background-color: $white;
+            @include media-breakpoint-up(md) {
+                height: auto !important;
+            }
+        }
+        @at-root #{&}-scroll {
+            ul {
+                padding: 1.5em 0;
+                li {
+                    cursor: pointer;
+                    padding-left: 1.2em;
+                    padding-right: 1.2em;
+                    font-size: rem(16);
+                    color: $greyish-brown;
+                    transition: all .2s ease-in-out;
+
+                    &.selected, &.highlighted, &:hover {
+                        background: transparent;
+                    }
+                    &:hover {
+                        color: $cerulean;
+                    }
+                }
+            }
+        }
+
+        }
+}

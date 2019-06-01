@@ -1,0 +1,67 @@
+@import "./resources/assets/sass/component";
+
+.component-btn-it-landscape {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-down(md) {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: space-between;
+    }
+
+
+    .btn-it-landscape {
+        @at-root #{&}__btn {
+            flex: 0 0 calc(25% - 1rem);
+            border-radius: 5px;
+            border: 1px solid $grey;
+            background-color: $white;
+            vertical-align: middle;
+            text-align: center;
+            margin-left: .5rem;
+            margin-right: .5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1.25rem;
+    
+            font-weight: 500;
+            color: $greyish-brown;
+    
+            &:hover {
+                box-shadow: $btn-box-shadow;
+                background-color: $cerulean;
+                color: $white;
+            }
+    
+            @include media-breakpoint-down(md) {
+                flex: 0 0 48%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+    
+            @include media-breakpoint-down(sm) {
+                font-size: rem(11);
+                line-height: 1.2;
+                padding: .5rem;
+            }
+    
+            @at-root #{&}__icon {
+                max-width: 2.75rem;
+            }
+    
+            @at-root #{&}__text {
+                margin-left: 1rem;
+                text-align: left;
+                @include media-breakpoint-down(sm) {
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+}
