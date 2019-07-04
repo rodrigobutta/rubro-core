@@ -486,7 +486,7 @@
                             <i class="fa fa-pencil mr-5"></i> Nueva
                         </h3>
                         <div class="block-options">
-                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close" >
                                 <i class="si si-close"></i>
                             </button>
                         </div>

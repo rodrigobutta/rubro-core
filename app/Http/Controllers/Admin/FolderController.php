@@ -364,8 +364,8 @@ class FolderController extends Controller
         // return $this->composeEdit($item->id);
 
         $rsp = [
-            'status' => 'success',
-            'redirect' => route('admin.folder.compose',['id' => $item->id])
+            'status' => 'success', 
+            'redirect' => route('admin.folder.panel',['id' => $parent_id])            
         ];
 
         return response()->json($rsp);

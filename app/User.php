@@ -49,6 +49,9 @@ class User extends Authenticatable
     }
 
 
+    public function contentClipboard(){
+        return Content::where('clipboard_user_id',$this->id)->whereHolder('clipboard')->get();
+    }
 
     public function getConfig($name,$expectsJson=false){
 

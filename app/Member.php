@@ -38,4 +38,19 @@ class Member extends Authenticatable
     
 
 
+    public function jsonMainInfo(){
+
+
+        $res = [
+            'name' => $this->name,
+            'photo_url' => $this->photo_url,
+            'email' => $this->email          
+        ];
+
+        return $res;
+
+
+    }
+
+
 }
