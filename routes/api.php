@@ -22,25 +22,55 @@ use Illuminate\Routing\Router;
 
 
 Route::group([
-    'prefix' => 'auth',
     'namespace' => 'Api'
 ], function () {
     
-    Route::post('login', 'AuthController@login');
-    Route::post('signup', 'AuthController@signup');
 
-
-    Route::post('firebase/login', 'AuthController@firebaseLogin');
-  
-    
+        
     Route::group([
-      'middleware' => 'auth:api'
+        'prefix' => 'auth',
+    ], function () {
+        
+        Route::post('login', 'AuthController@login');
+        Route::post('signup', 'AuthController@signup');
+
+        Route::post('firebase/login', 'AuthController@firebaseLogin');
+    
+        
+        Route::group([
+        'middleware' => 'auth:api'
+        ], function() {
+
+            Route::get('logout', 'AuthController@logout');
+            Route::get('user', 'AuthController@user');
+        
+        });
+
+    });
+
+
+        
+    Route::group([
+        // 'middleware' => 'auth:api',
+        'prefix'    => 'folder',
     ], function() {
 
-        Route::get('logout', 'AuthController@logout');
-        Route::get('user', 'AuthController@user');
+        Route::post('list', 'FolderController@list');
     
     });
+
+
+
+
+        
+    Route::group([
+        'prefix'    => 'test',
+    ], function() {
+
+        Route::get('push-notification', 'TestController@pushNotification');
+    
+    });
+
 
 
 });
