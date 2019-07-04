@@ -20,6 +20,7 @@
         "php-http/guzzle6-adapter": "^2.0",
         "phpoffice/phpspreadsheet": "^1.4",
         "proai/laravel-handlebars": "^1.8",
+        "pusher/pusher-php-server": "^4.0",
         "rachidlaasri/laravel-installer": "^4.0",
         "webpatser/laravel-uuid": "^3.0"
     },
