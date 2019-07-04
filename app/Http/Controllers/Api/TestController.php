@@ -43,4 +43,37 @@ class TestController extends Controller
         return response()->json($response, $statusCode);
     }
 
+
+    public function backgroundPushNotification(Request $request){
+
+        $beamsClient = new \Pusher\PushNotifications\PushNotifications(array(
+            "instanceId" => "063823b2-17a8-4234-8ba8-92cd22f58b40",
+            "secretKey" => "13B2056544C07FE9E2B18BE51205DB1173DE1426291B2255CAEF6ED8166E64A2",
+        ));
+        
+        $publishResponse = $beamsClient->publishToInterests(
+            array("hello"),
+            array("fcm" => array("notification" => array(
+            "title" => "Hello Back",
+            "body" => "Hello, Background!",
+            )),
+        ));
+
+
+        $response = new \stdClass();
+
+        $statusCode = 200;
+
+        $response->message = 'Background push notification sent..';
+
+        $response->code = $statusCode;
+
+        return response()->json($response, $statusCode);
+
+    }
+
+
+
+
+
 }

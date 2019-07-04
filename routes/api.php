@@ -68,6 +68,7 @@ Route::group([
     ], function() {
 
         Route::get('push-notification', 'TestController@pushNotification');
+        Route::get('push-notification-background', 'TestController@backgroundPushNotification');
     
     });
 

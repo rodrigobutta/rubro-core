@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e2831ce023d01ff7a84ccbcc37a7bd5",
+    "content-hash": "ccca34c8c306d6d6768d3db9379824ef",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3236,6 +3236,42 @@
                 "trigger"
             ],
             "time": "2019-06-25T09:22:44+00:00"
+        },
+        {
+            "name": "pusher/pusher-push-notifications",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/push-notifications-php.git",
+                "reference": "ffaabe56a181bab0b41019626e571ae7156e9d0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/push-notifications-php/zipball/ffaabe56a181bab0b41019626e571ae7156e9d0a",
+                "reference": "ffaabe56a181bab0b41019626e571ae7156e9d0a",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^5.0",
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "1.0.5",
+                "phpunit/phpunit": "~5.7.0",
+                "symfony/yaml": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pusher\\PushNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2019-02-06T15:30:03+00:00"
         },
         {
             "name": "rachidlaasri/laravel-installer",
