@@ -21,3 +21,4 @@ yarn-error.log
 /phploy.phar
 /package-lock.json
 package-lock.json
+composer.lock
